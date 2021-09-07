@@ -3,6 +3,13 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Search from "./components/Search";
+import Login from "./components/Login";
+import Shows from "./components/Shows";
+import AboutUs from "./components/AboutUs";
+
+
 
 
 function App() {
@@ -13,19 +20,19 @@ function App() {
         <div>
           <Switch>
             <Route exact path="/">
-              Home
+              <Home />
             </Route>
             <Route path="/search">
-              Search
+              <Search />
             </Route>
             <Route path="/login">
-              Login
+              <Login />
             </Route>
             <Route path="/shows">
-              Shows
+              <Shows />
             </Route>
             <Route path="/about">
-              About Us
+              <AboutUs />
             </Route>
           </Switch>
         </div>
