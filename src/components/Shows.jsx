@@ -4,7 +4,7 @@ class Shows extends React.Component {
   render() {
     return (
       <>
-      Coming Soon
+      Shows Coming Soon
       </>
     );
   }

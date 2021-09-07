@@ -4,7 +4,7 @@ class AboutUs extends React.Component {
   render() {
     return (
       <>
-      Coming Soon
+      About Us Coming Soon
       </>
     );
   }

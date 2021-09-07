@@ -8,9 +8,7 @@ import Search from "./components/Search";
 import Login from "./components/Login";
 import Shows from "./components/Shows";
 import AboutUs from "./components/AboutUs";
-
-
-
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -36,6 +34,7 @@ function App() {
             </Route>
           </Switch>
         </div>
+        <Footer />
       </Router>
     </>
   );

@@ -4,7 +4,7 @@ class Search extends React.Component {
   render() {
     return (
       <>
-      Coming Soon
+      Search Coming Soon
       </>
     );
   }
