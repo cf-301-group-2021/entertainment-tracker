@@ -10,34 +10,36 @@ import Shows from "./components/Shows";
 import AboutUs from "./components/AboutUs";
 import Footer from "./components/Footer";
 
-function App() {
-  return (
-    <>
-      <Router>
-        <Header />
-        <div>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/search">
-              <Search />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/shows">
-              <Shows />
-            </Route>
-            <Route path="/about">
-              <AboutUs />
-            </Route>
-          </Switch>
-        </div>
-        <Footer />
-      </Router>
-    </>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <Router>
+          <Header />
+          <div>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/search">
+                <Search />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/shows">
+                <Shows />
+              </Route>
+              <Route path="/about">
+                <AboutUs />
+              </Route>
+            </Switch>
+          </div>
+          <Footer />
+        </Router>
+      </>
+    );
+  }
 }
 
 export default App;
