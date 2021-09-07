@@ -58,7 +58,7 @@ For the purpose of this list "media" means movies, tv series, music albums or bo
 
 ### Data Flow
 
-![item-search](./docs/item-search-data-flow.png)
+![item-search](./item-search-data-flow.png)
 
 Item Search Data Flow
 
@@ -66,7 +66,7 @@ Item Search Data Flow
 * Backend API: Requests search resources from a third-party API server.
 * Backend API: Receives response resources from the third-party API server, transforms the shape into our domain model, adds a token to the data payload and returns the data to the Frontend.
 
-![login](./docs/login-data-flow.png)
+![login](./login-data-flow.png)
 
 Login Data Flow
 
@@ -74,7 +74,7 @@ Login Data Flow
 * Backend: Queries the DB technology for User data matching the User's login credentials.
 * Backend: Authenticates the User and sends a token to the Frontend.
 
-![CRUD](./docs/CRUD-item-data-flow.png)
+![CRUD](./CRUD-item-data-flow.png)
 
 CRUD Item Data Flow
 
