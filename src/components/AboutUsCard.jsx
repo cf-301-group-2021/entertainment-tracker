@@ -1,8 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 
-// props: img src, card title, card text
-
 class AboutUsCard extends React.Component {
   render() {
     return (

@@ -9,7 +9,16 @@ class AboutUs extends React.Component {
         <h2>Our Story</h2>
         <p>Some fun text about our peeps</p>
         <h3>Our Team</h3>
-        <AboutUsCard img="img" name="name" bio="bio" />
+        {data.authors.map((author, index) => {
+          return (
+            <AboutUsCard
+              key={index}
+              img={author.img}
+              name={author.name}
+              bio={author.bio}
+            />
+          );
+        })}
       </>
     );
   }
