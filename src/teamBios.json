@@ -1,0 +1,24 @@
+{
+  "authors": [
+    {
+      "name": "Joe Ivans",
+      "bio": "A long bio",
+      "img": "../images/KasonBraley.jpg"
+    },
+    {
+      "name": "Marquesa Asmussen",
+      "bio": "A long bio",
+      "img": "../images/KasonBraley.jpg"
+    },
+    {
+      "name": "Stefanie Riehle",
+      "bio": "A long bio",
+      "img": "../images/KasonBraley.jpg"
+    },
+    {
+      "name": "Kason Braley",
+      "bio": "A long bio",
+      "img": "../images/KasonBraley.jpg"
+    }
+  ]
+}

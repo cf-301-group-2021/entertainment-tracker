@@ -1,5 +1,6 @@
 import React from "react";
 import AboutUsCard from "./AboutUsCard";
+import data from "../teamBios.json";
 
 class AboutUs extends React.Component {
   render() {
