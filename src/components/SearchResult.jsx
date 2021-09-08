@@ -7,9 +7,9 @@ class SearchResult extends React.Component {
     return (
       <>
         <SearchResultCard
-          img="badimage"
-          title="Game of Thrones"
-          description="Dragons and Death"
+          img={this.props.tvShow.img}
+          title={this.props.tvShow.title}
+          description={this.props.tvShow.description}
         />
       </>
     );
