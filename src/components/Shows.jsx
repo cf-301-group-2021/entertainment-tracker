@@ -14,9 +14,9 @@ const tvShow = {
 class Shows extends React.Component {
   render() {
     return (
-      <>
+      <div className="shows">
         <ShowCard tvShow={tvShow} />
-      </>
+      </div>
     );
   }
 }

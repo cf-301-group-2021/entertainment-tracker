@@ -13,7 +13,7 @@ import Footer from "./components/Footer";
 class App extends React.Component {
   render() {
     return (
-      <>
+      <div className="app">
         <Router>
           <Header />
           <div>
@@ -37,7 +37,7 @@ class App extends React.Component {
           </div>
           <Footer />
         </Router>
-      </>
+      </div>
     );
   }
 }

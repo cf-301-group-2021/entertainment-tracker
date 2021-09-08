@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class Footer extends React.Component {
   render() {
     return (
-      <>
+      <div className="footer">
         <Navbar>
           <Navbar.Text>
             {"\u00A9 2021 AppNameHere, LLC"}
@@ -15,7 +15,7 @@ class Footer extends React.Component {
             <Link to="/about">Contact Us</Link>
           </Nav.Item>
         </Navbar>
-      </>
+      </div>
     );
   }
 }
