@@ -7,8 +7,10 @@ class Footer extends React.Component {
   render() {
     return (
       <div className="footer">
-        <Navbar>
-          <Navbar.Text>{"\u00A9 2021 AppNameHere, LLC"}</Navbar.Text>
+        <Navbar className="footernavbar">
+          <Nav.Item>
+            <Navbar.Text>{"\u00A9 2021 tvRepo, LLC"}</Navbar.Text>
+          </Nav.Item>
           <Nav.Item>
             <Link to="/about">Contact Us</Link>
           </Nav.Item>
