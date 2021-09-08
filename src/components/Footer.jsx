@@ -8,9 +8,7 @@ class Footer extends React.Component {
     return (
       <div className="footer">
         <Navbar>
-          <Navbar.Text>
-            {"\u00A9 2021 AppNameHere, LLC"}
-          </Navbar.Text>
+          <Navbar.Text>{"\u00A9 2021 AppNameHere, LLC"}</Navbar.Text>
           <Nav.Item>
             <Link to="/about">Contact Us</Link>
           </Nav.Item>
