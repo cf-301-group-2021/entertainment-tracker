@@ -1,5 +1,9 @@
 # Entertainment Tracker
 **Keep track of your favorite pieces of entertainment. Always be up to date with the latest releases.**
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2761d381-9229-4b25-a508-ca11d813b193/deploy-status)](https://app.netlify.com/sites/pedantic-villani-94b771/deploys)
+
+
 ## Team:
 - Stefanie Riehle
 - Joe Ivans
