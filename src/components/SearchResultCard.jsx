@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import parse from "html-react-parser";
 
 class SearchResultCard extends React.Component {
   render() {
@@ -9,7 +10,7 @@ class SearchResultCard extends React.Component {
           <Card.Img variant="top" src={this.props.img} />
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
-            <Card.Text>{this.props.description}</Card.Text>
+            <Card.Text>{parse(this.props.description)}</Card.Text>
           </Card.Body>
         </Card>
       </div>
