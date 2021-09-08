@@ -11,7 +11,8 @@ class AboutUs extends React.Component {
           <h2>Our Story</h2>
           <p>
             We Started TvRepo to solve what seemed to be a universal issue:
-            remembering all the great shows your watching (or waiting to watch)!
+            remembering all the great shows you&apos;re watching (or waiting to
+            watch)!
           </p>
           <h3>Our Team</h3>
         </div>
