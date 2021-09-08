@@ -9,20 +9,60 @@ import Login from "./components/Login";
 import Shows from "./components/Shows";
 import AboutUs from "./components/AboutUs";
 import Footer from "./components/Footer";
+import ToastMessage from "./components/ToastMessage";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: {
+        status: false,
+        content: "",
+      },
+    };
+  }
+
+  errorHandler = (error) => {
+    this.setState((prevState) => ({
+      error: {
+        ...prevState.error,
+        status: true,
+        content: error.message,
+      },
+    }));
+  };
+
+  clearError = () => {
+    this.setState((prevState) => ({
+      error: {
+        ...prevState.error,
+        status: false,
+        content: "",
+      },
+    }));
+  };
+
   render() {
     return (
       <div className="app">
         <Router>
+          {this.state.error.status && (
+            <ToastMessage
+              title="error"
+              body={this.state.error.content}
+              show={true}
+              clearError={this.clearError}
+            />
+          )}
           <Header />
+
           <div>
             <Switch>
               <Route exact path="/">
                 <Home />
               </Route>
               <Route path="/search">
-                <Search />
+                <Search errorHandler={this.errorHandler} />
               </Route>
               <Route path="/login">
                 <Login />
