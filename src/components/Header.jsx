@@ -7,20 +7,28 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <Navbar>
-          <Nav.Item>
+        <Navbar className="headernavbar">
+          <Nav.Item className="navitem">
             <Link to="/" className="nav-link">
               Home
             </Link>
+          </Nav.Item>
+          <Nav.Item>
             <Link to="/search" className="nav-link">
               Search
             </Link>
+          </Nav.Item>
+          <Nav.Item>
             <Link to="/login" className="nav-link">
               Login
             </Link>
+          </Nav.Item>
+          <Nav.Item>
             <Link to="/shows" className="nav-link">
               Shows
             </Link>
+          </Nav.Item>
+          <Nav.Item>
             <Link to="/about" className="nav-link">
               About Us
             </Link>
