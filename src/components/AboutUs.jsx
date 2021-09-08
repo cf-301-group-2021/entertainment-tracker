@@ -5,7 +5,7 @@ import data from "../teamBios.json";
 class AboutUs extends React.Component {
   render() {
     return (
-      <>
+      <div className="aboutus">
         <h2>Our Story</h2>
         <p>Some fun text about our peeps</p>
         <h3>Our Team</h3>
@@ -19,7 +19,7 @@ class AboutUs extends React.Component {
             />
           );
         })}
-      </>
+      </div>
     );
   }
 }

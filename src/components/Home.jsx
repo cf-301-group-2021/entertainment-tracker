@@ -2,11 +2,7 @@ import React from "react";
 
 class Home extends React.Component {
   render() {
-    return (
-      <>
-      Home Coming Soon
-      </>
-    );
+    return <div className="home">Home Coming Soon</div>;
   }
 }
 

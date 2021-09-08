@@ -12,14 +12,14 @@ const tvShow = {
 class Search extends React.Component {
   render() {
     return (
-      <>
+      <div className="search">
         <SearchForm />
         {bool ? (
           <SearchResult tvShow={tvShow} />
         ) : (
           <p>no search results because this is false</p>
         )}
-      </>
+      </div>
     );
   }
 }

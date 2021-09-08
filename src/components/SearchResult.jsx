@@ -5,13 +5,13 @@ import SearchResultCard from "./SearchResultCard";
 class SearchResult extends React.Component {
   render() {
     return (
-      <>
+      <div className="searchresult">
         <SearchResultCard
           img={this.props.tvShow.img}
           title={this.props.tvShow.title}
           description={this.props.tvShow.description}
         />
-      </>
+      </div>
     );
   }
 }

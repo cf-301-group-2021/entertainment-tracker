@@ -2,11 +2,7 @@ import React from "react";
 
 class Login extends React.Component {
   render() {
-    return (
-      <>
-      Login Coming Soon
-      </>
-    );
+    return <div className="login">Login Coming Soon</div>;
   }
 }
 
