@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Search from "./components/Search";
 import Login from "./components/Login";
@@ -59,16 +59,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Router>
-          {this.state.error.status && (
-            <ToastMessage
-              title="error"
-              body={this.state.error.content}
-              show={true}
-              clearError={this.clearError}
-            />
-          )}
-          <Header />
+        {this.state.error.status && (
+          <ToastMessage
+            title="error"
+            body={this.state.error.content}
+            show={true}
+            clearError={this.clearError}
+          />
+        )}
+        <Header />
 
           <div>
             <Switch>
@@ -96,7 +95,6 @@ class App extends React.Component {
             </Switch>
           </div>
           <Footer />
-        </Router>
       </div>
     );
   }
