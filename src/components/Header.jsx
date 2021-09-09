@@ -19,9 +19,15 @@ class Header extends React.Component {
             </Link>
           </Nav.Item>
           <Nav.Item>
-            <Link to="/login" className="nav-link">
-              Login
-            </Link>
+            {this.props.loggedIn ? (
+              <Link to="/logout" className="nav-link">
+                Logout
+              </Link>
+            ) : (
+              <Link to="/login" className="nav-link">
+                Login
+              </Link>
+            )}
           </Nav.Item>
           <Nav.Item>
             <Link to="/shows" className="nav-link">

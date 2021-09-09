@@ -6,6 +6,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Search from "./components/Search";
 import Login from "./components/Login";
+import Logout from "./components/Logout";
 import Shows from "./components/Shows";
 import AboutUs from "./components/AboutUs";
 import Footer from "./components/Footer";
@@ -20,6 +21,8 @@ class App extends React.Component {
         content: "",
       },
       myShows: [],
+      loggedIn: false,
+      loggedInUser: "",
     };
   }
 
@@ -56,6 +59,10 @@ class App extends React.Component {
     });
   };
 
+  toggleLoginStatus = (status, email) => {
+    this.setState({ loggedIn: status, loggedInUser: email });
+  };
+
   render() {
     return (
       <div className="app">
@@ -67,7 +74,7 @@ class App extends React.Component {
             clearError={this.clearError}
           />
         )}
-        <Header />
+        <Header loggedIn={this.state.loggedIn} />
 
         <div>
           <Switch>
@@ -79,7 +86,14 @@ class App extends React.Component {
             </Route>
             <Route path="/login">
               <Home />
-              <Login />
+              <Login toggleLoginStatus={this.toggleLoginStatus} />
+            </Route>
+            <Route path="/logout">
+              <Home />
+              <Logout
+                toggleLoginStatus={this.toggleLoginStatus}
+                loggedInUser={this.state.loggedInUser}
+              />
             </Route>
             <Route path="/shows">
               <Shows
