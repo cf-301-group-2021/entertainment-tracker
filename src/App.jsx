@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
@@ -46,17 +47,47 @@ class App extends React.Component {
     }));
   };
 
-  addShow = (tvShow) => {
-    this.setState({ myShows: [...this.state.myShows, tvShow] });
+  addShow = async (tvShow) => {
+    // prevent duplicate additions
+    if (
+      this.state.myShows.find((savedShow) => savedShow.name === tvShow.name)
+    ) {
+      return;
+    }
+
+    try {
+      const API = `${process.env.REACT_APP_SERVER_URL}/shows/${this.state.loggedInUser}`;
+      const newArray = [...this.state.myShows, tvShow];
+
+      this.setState({ myShows: newArray });
+      console.log(newArray);
+      await axios.put(API, newArray);
+    } catch (error) {
+      this.errorHandler(error);
+    }
   };
 
   deleteShow = (tvShow) => {
-    console.log("deleted");
-    this.setState({
-      myShows: this.state.myShows.filter((show) => {
-        return show.name !== tvShow.name;
-      }),
-    });
+    try {
+      this.setState({
+        myShows: this.state.myShows.filter((show) => {
+          return show.name !== tvShow.name;
+        }),
+      });
+    } catch (error) {
+      this.errorHandler(error);
+    }
+  };
+
+  getUserShows = async () => {
+    try {
+      const API = `${process.env.REACT_APP_SERVER_URL}/shows/${this.state.loggedInUser}`;
+      const results = await axios.get(API);
+      console.log(results.data);
+      // this.setState({ myShows: results.data.userShows });
+    } catch (error) {
+      this.errorHandler(error);
+    }
   };
 
   toggleLoginStatus = (status, email) => {
@@ -99,6 +130,8 @@ class App extends React.Component {
               <Shows
                 myShows={this.state.myShows}
                 deleteShow={this.deleteShow}
+                getUserShows={this.getUserShows}
+                loggedIn={this.state.loggedIn}
               />
             </Route>
             <Route path="/about">
