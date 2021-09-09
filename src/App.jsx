@@ -19,6 +19,7 @@ class App extends React.Component {
         status: false,
         content: "",
       },
+      myShows: [],
     };
   }
 
@@ -42,6 +43,19 @@ class App extends React.Component {
     }));
   };
 
+  addShow = (tvShow) => {
+    this.setState({ myShows: [...this.state.myShows, tvShow] });
+  };
+
+  deleteShow = (tvShow) => {
+    console.log("deleted");
+    this.setState({
+      myShows: this.state.myShows.filter((show) => {
+        return show.name !== tvShow.name;
+      }),
+    });
+  };
+
   render() {
     return (
       <div className="app">
@@ -55,26 +69,32 @@ class App extends React.Component {
         )}
         <Header />
 
-        <div>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/search">
-              <Search errorHandler={this.errorHandler} />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/shows">
-              <Shows />
-            </Route>
-            <Route path="/about">
-              <AboutUs />
-            </Route>
-          </Switch>
-        </div>
-        <Footer />
+          <div>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/search">
+                <Search
+                  errorHandler={this.errorHandler}
+                  addShow={this.addShow}
+                />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/shows">
+                <Shows
+                  myShows={this.state.myShows}
+                  deleteShow={this.deleteShow}
+                />
+              </Route>
+              <Route path="/about">
+                <AboutUs />
+              </Route>
+            </Switch>
+          </div>
+          <Footer />
       </div>
     );
   }

@@ -1,20 +1,42 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
+import { Button, Card } from "react-bootstrap";
+import parse from "html-react-parser";
 
 class ShowCard extends React.Component {
+  handleImageClick = () => {
+    this.props.tvShow?.officialSite &&
+      window.open(this.props.tvShow.officialSite);
+  };
+
   render() {
+    const tvShow = this.props.tvShow;
     return (
       <div className="showcard">
         <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={this.props.tvShow.img} />
+          <Card.Img
+            variant="top"
+            src={tvShow.image?.original}
+            onClick={() => this.handleImageClick()}
+          />
+
           <Card.Body>
-            <Card.Title>{this.props.tvShow.title}</Card.Title>
-            <Card.Text>{this.props.tvShow.description}</Card.Text>
-            <Card.Text>{this.props.tvShow.status}</Card.Text>
-            <Card.Text>{this.props.tvShow.timeZone}</Card.Text>
-            <Card.Text>{this.props.tvShow.time}</Card.Text>
-            <Card.Text>{this.props.tvShow.nextEpisode}</Card.Text>
-            <Card.Text>{this.props.tvShow.network}</Card.Text>
+            <Card.Title>{tvShow.name}</Card.Title>
+            {parse(tvShow.summary)}
+            <br />
+            Airing status: {tvShow.status}
+            {tvShow.timeZone}
+            {tvShow.schedule.time}
+            <br />
+            Airs on: {tvShow.schedule.days}
+            <br />
+            Network: {tvShow.network?.name || tvShow.webChannel.name}
+            <br />
+            <Button
+              variant="danger"
+              onClick={() => this.props.deleteShow(tvShow)}
+            >
+              Delete
+            </Button>
           </Card.Body>
         </Card>
       </div>
