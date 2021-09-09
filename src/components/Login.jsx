@@ -21,7 +21,7 @@ class Login extends React.Component {
           data: { email, password },
         }
       );
-
+      this.props.toggleLoginStatus(true, email);
       console.log(response);
     } catch (error) {
       console.log("test");
