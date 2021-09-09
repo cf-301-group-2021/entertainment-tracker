@@ -7,18 +7,20 @@ class SearchResultCard extends React.Component {
     return (
       <Card className="searchresultcard">
         <Card.Img variant="top" src={this.props.tvShow.image?.original} />
-        <Card.Body>
+        <Card.Body style={{ overflowY: "scroll" }}>
           <Card.Title>{this.props.tvShow.name}</Card.Title>
-          {this.props.tvShow.summary
-            ? parse(this.props.tvShow.summary)
-            : "No description available"}
-          <Button
-            variant="primary"
-            onClick={() => this.props.addShow(this.props.tvShow)}
-          >
-            Add
-          </Button>
+          {this.props.tvShow.summary ? (
+            <div>{parse(this.props.tvShow.summary)}</div>
+          ) : (
+            "No description available"
+          )}
         </Card.Body>
+        <Button
+          variant="primary"
+          onClick={() => this.props.addShow(this.props.tvShow)}
+        >
+          Add
+        </Button>
       </Card>
     );
   }
