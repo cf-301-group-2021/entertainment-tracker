@@ -15,9 +15,12 @@ class Search extends React.Component {
   getShowData = async (title) => {
     try {
       // don't call API on empty form submissions
-      if (title === this.state.searchTitle) {
+      if (title === "") {
+        throw new Error("empty sumbission field");
+      } else if (title === this.state.searchTitle) {
         return;
       }
+
       console.log("hitting API");
 
       const API = `https://cf301-2021.herokuapp.com/search/shows/${title}`;
@@ -35,10 +38,12 @@ class Search extends React.Component {
     return (
       <div className="search">
         <SearchForm getShowData={this.getShowData} />
-
-        {this.state.searchResult ? (
-          <SearchResult searchResult={this.state.searchResult} />
-        ) : null}
+        {this.state.searchResult && (
+          <SearchResult
+            searchResult={this.state.searchResult}
+            addShow={this.props.addShow}
+          />
+        )}
       </div>
     );
   }

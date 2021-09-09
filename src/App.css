@@ -30,7 +30,7 @@ nav.footernavbar {
 
 div.home {
   text-align: center;
-	background-color: #e9e8dd;
+  background-color: #e9e8dd;
 }
 
 .welcome {
@@ -58,6 +58,7 @@ div.home {
 }
 
 .searchresultcard {
+  width: 18rem;
 }
 
 .showcard {
