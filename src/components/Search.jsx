@@ -23,9 +23,10 @@ class Search extends React.Component {
 
       console.log("hitting API");
 
-      const API = `https://cf301-2021.herokuapp.com/search/shows/${title}`;
+      const API = `${process.env.REACT_APP_SERVER_URL}/search/shows/${title}`;
       const results = await axios.get(API);
       this.setState({ searchTitle: title, searchResult: results.data });
+
       console.log("hit API");
     } catch (error) {
       //TODO: better error handling; render an error
