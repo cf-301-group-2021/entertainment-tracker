@@ -6,15 +6,17 @@ class SearchResult extends React.Component {
   render() {
     return (
       <div className="searchresult">
-        {this.props.searchResult.map((tvShow, index) => {
-          return (
-            <SearchResultCard
-              key={index}
-              tvShow={tvShow.show}
-              addShow={this.props.addShow}
-            />
-          );
-        })}
+        {this.props.searchResult
+          .filter((tvShow) => tvShow.show.image && tvShow.show.summary)
+          .map((tvShow, index) => {
+            return (
+              <SearchResultCard
+                key={index}
+                tvShow={tvShow.show}
+                addShow={this.props.addShow}
+              />
+            );
+          })}
       </div>
     );
   }
