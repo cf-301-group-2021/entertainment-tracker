@@ -69,32 +69,29 @@ class App extends React.Component {
         )}
         <Header />
 
-          <div>
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/search">
-                <Search
-                  errorHandler={this.errorHandler}
-                  addShow={this.addShow}
-                />
-              </Route>
-              <Route path="/login">
-                <Login />
-              </Route>
-              <Route path="/shows">
-                <Shows
-                  myShows={this.state.myShows}
-                  deleteShow={this.deleteShow}
-                />
-              </Route>
-              <Route path="/about">
-                <AboutUs />
-              </Route>
-            </Switch>
-          </div>
-          <Footer />
+        <div>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/search">
+              <Search errorHandler={this.errorHandler} addShow={this.addShow} />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/shows">
+              <Shows
+                myShows={this.state.myShows}
+                deleteShow={this.deleteShow}
+              />
+            </Route>
+            <Route path="/about">
+              <AboutUs />
+            </Route>
+          </Switch>
+        </div>
+        <Footer />
       </div>
     );
   }

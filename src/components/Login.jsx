@@ -7,9 +7,7 @@ import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
 import { withRouter } from "react-router-dom";
 
-
 class Login extends React.Component {
-
   processLogin = async (event) => {
     event.preventDefault();
 
@@ -21,10 +19,12 @@ class Login extends React.Component {
     // todo: probably want a cross-component auth check utility
 
     try {
-      const response = await axios
-        .post(process.env.REACT_APP_SERVER_URL + "/login", {
+      const response = await axios.post(
+        process.env.REACT_APP_SERVER_URL + "/login",
+        {
           data: { email, password },
-        });
+        }
+      );
 
       console.log(response);
     } catch (error) {
