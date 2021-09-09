@@ -78,6 +78,7 @@ class App extends React.Component {
               <Search errorHandler={this.errorHandler} addShow={this.addShow} />
             </Route>
             <Route path="/login">
+              <Home />
               <Login />
             </Route>
             <Route path="/shows">

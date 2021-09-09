@@ -1,10 +1,6 @@
 import axios from "axios";
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Modal from "react-bootstrap/Modal";
-import Row from "react-bootstrap/Row";
+import { Button, Col, Form, Modal, Row } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 
 class Login extends React.Component {
