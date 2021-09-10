@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import "../AboutUs.css";
+
 class AboutUsCard extends React.Component {
   render() {
     return (
