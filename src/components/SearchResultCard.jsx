@@ -1,6 +1,7 @@
 import parse from "html-react-parser";
 import React from "react";
 import { Button, Card } from "react-bootstrap";
+import { withRouter } from "react-router-dom";
 
 class SearchResultCard extends React.Component {
   render() {
@@ -23,11 +24,13 @@ class SearchResultCard extends React.Component {
             Add
           </Button>
         ) : (
-          <Button>Log in to add!</Button>
+          <Button onClick={() => this.props.history.push("/login")}>
+            Log in to add!
+          </Button>
         )}
       </Card>
     );
   }
 }
 
-export default SearchResultCard;
+export default withRouter(SearchResultCard);

@@ -20,12 +20,10 @@ class Login extends React.Component {
       console.error(error);
     }
 
-    this.navigateToShowsPage();
+    this.navigateBack();
   };
 
-  navigateToHomePage = () => this.props.history.push("/");
-
-  navigateToShowsPage = () => this.props.history.push("/shows");
+  navigateBack = () => this.props.history.goBack();
 
   /**
    * On cancel click, navigate to /home.
@@ -39,7 +37,7 @@ class Login extends React.Component {
       <Modal
         size="lg"
         show={true}
-        onHide={this.navigateToHomePage}
+        onHide={this.navigateBack}
         aria-labelledby="example-modal-sizes-title-lg"
       >
         <Modal.Header closeButton>
