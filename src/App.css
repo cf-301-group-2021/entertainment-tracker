@@ -76,9 +76,13 @@ div.home {
 }
 
 .showcard {
-  width: 18rem;
+  width: 17rem;
   height: 700px;
   margin: 10px;
+}
+
+.hidescroll::-webkit-scrollbar {
+  width: 0 !important;
 }
 
 .shows {
