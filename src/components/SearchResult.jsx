@@ -8,7 +8,7 @@ import SearchResultCard from "./SearchResultCard";
 class SearchResult extends React.Component {
   render() {
     return (
-      <Container className="searchresult" fluid>
+      <Container className="searchresult col-sm-4 col-md-8" fluid>
         <Row>
           {this.props.searchResult
             .filter((tvShow) => tvShow.showImageSmall && tvShow.showDescription)
@@ -18,7 +18,7 @@ class SearchResult extends React.Component {
                   <SearchResultCard
                     tvShow={tvShow}
                     addShow={this.props.addShow}
-                    loggedInUser={this.props.loggedInUser}
+                    loggedIn={this.props.loggedIn}
                   />
                 </Col>
               );
