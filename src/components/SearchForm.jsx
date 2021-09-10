@@ -7,10 +7,15 @@ class SearchForm extends React.Component {
     event.preventDefault();
     const title = event.target.formTitle.value;
     // const genre = event.target.formGenre.value;
-    // const person = event.target.formPerson.value;
+    const person = event.target.formPerson.value;
     // const streamingService = event.target.formStreamingService.value;
 
-    this.props.getShowData(title);
+    console.log(person);
+    if (title) {
+      this.props.getShowData(title);
+    } else if (person) {
+      this.props.getPeopleData(person);
+    }
   };
 
   render() {

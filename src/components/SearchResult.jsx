@@ -7,6 +7,10 @@ import SearchResultCard from "./SearchResultCard";
 // render as many SearchResultCard's as needed based on the results data from the api
 class SearchResult extends React.Component {
   render() {
+    if (!this.props.searchResult) {
+      return null;
+    }
+
     return (
       <Container className="searchresult">
         <Row xs={1} md={2} className="g-4">
