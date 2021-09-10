@@ -25,8 +25,12 @@ class Search extends React.Component {
 
       const API = `${process.env.REACT_APP_SERVER_URL}/search/shows/${title}`;
       const results = await axios.get(API);
+      results.data.splice(0, -5);
       console.log(results.data);
-      this.setState({ searchTitle: title, searchResult: results.data });
+      this.setState({
+        searchTitle: title,
+        searchResult: results.data,
+      });
 
       console.log("hit API");
     } catch (error) {

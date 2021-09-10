@@ -63,7 +63,7 @@ class App extends React.Component {
 
       this.setState({ myShows: newArray });
       console.log(newArray);
-      await axios.put(API, newArray);
+      await axios.put(API, tvShow);
     } catch (error) {
       this.errorHandler(error);
     }
