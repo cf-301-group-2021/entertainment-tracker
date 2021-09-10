@@ -8,13 +8,7 @@ class AboutUs extends React.Component {
     return (
       <div className="aboutus">
         <div id="aboutushead">
-          <h2>Our Story</h2>
-          <p>
-            We Started TvRepo to solve what seemed to be a universal issue:
-            remembering all the great shows you&apos;re watching (or waiting to
-            watch)!
-          </p>
-          <h3>Our Team</h3>
+          <h2 style={{padding: "40px", fontSize: "48px",}}>Our Team</h2>
         </div>
         <div id="authorcards">
           {data.authors.map((author, index) => {

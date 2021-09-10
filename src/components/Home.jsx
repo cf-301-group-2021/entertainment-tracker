@@ -9,6 +9,10 @@ class Home extends React.Component {
           <p>
             You want to find and watch the very best in television
             entertainment. tvRepo is here to help!
+            <p></p>
+            We started tvRepo to solve what seemed to be a universal issue:
+            remembering all the great shows you&aposre watching (or waiting to
+            watch)!
           </p>
         </section>
       </div>
