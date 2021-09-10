@@ -49,44 +49,46 @@ class App extends React.Component {
 
   addShow = async (tvShow) => {
     // prevent duplicate additions
-    if (
-      this.state.myShows.find(
-        (savedShow) => savedShow.showTitle === tvShow.showTitle
-      )
-    ) {
+    const found = this.state.myShows.find(
+      (savedShow) => savedShow.showTitle === tvShow.showTitle
+    );
+
+    if (found) {
       return;
     }
 
     try {
-      const API = `${process.env.REACT_APP_SERVER_URL}/shows/${this.state.loggedInUser}`;
       const newArray = [...this.state.myShows, tvShow];
 
       this.setState({ myShows: newArray });
-      console.log(newArray);
-      await axios.put(API, tvShow);
+      this.put(newArray); // newArray??
     } catch (error) {
       this.errorHandler(error);
     }
   };
 
-  deleteShow = (tvShow) => {
+  deleteShow = async (tvShow) => {
     try {
-      this.setState({
-        myShows: this.state.myShows.filter((show) => {
-          return show.showTitle !== tvShow.showTitle;
-        }),
+      const newArray = this.state.myShows.filter((show) => {
+        return show.showTitle !== tvShow.showTitle;
       });
+      this.setState({ myShows: newArray });
+      this.put(newArray);
     } catch (error) {
       this.errorHandler(error);
     }
+  };
+
+  put = async (newArray) => {
+    const API = `${process.env.REACT_APP_SERVER_URL}/shows/${this.state.loggedInUser}`;
+    await axios.put(API, newArray);
   };
 
   getUserShows = async () => {
     try {
       const API = `${process.env.REACT_APP_SERVER_URL}/shows/${this.state.loggedInUser}`;
       const results = await axios.get(API);
-      console.log(results.data);
-      // this.setState({ myShows: results.data.userShows });
+      this.setState({ myShows: results.data });
     } catch (error) {
       this.errorHandler(error);
     }
@@ -94,6 +96,10 @@ class App extends React.Component {
 
   toggleLoginStatus = (status, email) => {
     this.setState({ loggedIn: status, loggedInUser: email });
+  };
+
+  clearShowsState = () => {
+    this.setState({ myShows: [] });
   };
 
   render() {
@@ -126,6 +132,7 @@ class App extends React.Component {
               <Logout
                 toggleLoginStatus={this.toggleLoginStatus}
                 loggedInUser={this.state.loggedInUser}
+                clearShowsState={this.clearShowsState}
               />
             </Route>
             <Route path="/shows">

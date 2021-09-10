@@ -9,22 +9,14 @@ class Login extends React.Component {
 
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(email, password);
-    console.log(process.env.REACT_APP_SERVER_URL + "/login");
-
     // todo: probably want a cross-component auth check utility
 
     try {
-      const response = await axios.post(
-        process.env.REACT_APP_SERVER_URL + "/login",
-        {
-          data: { email, password },
-        }
-      );
+      await axios.post(process.env.REACT_APP_SERVER_URL + "/login", {
+        data: { email, password },
+      });
       this.props.toggleLoginStatus(true, email);
-      console.log(response);
     } catch (error) {
-      console.log("test");
       console.error(error);
     }
 

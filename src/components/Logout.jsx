@@ -12,6 +12,7 @@ class Logout extends React.Component {
         }
       );
       this.props.toggleLoginStatus(false, "");
+      this.props.clearShowsState();
       console.log(response);
     } catch (error) {
       console.error(error);
