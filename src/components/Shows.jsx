@@ -5,7 +5,6 @@ import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
 import ShowCard from "./ShowCard.jsx";
 
-
 class Shows extends React.Component {
   componentDidMount() {
     this.props.loggedIn && this.props.getUserShows();
@@ -14,15 +13,12 @@ class Shows extends React.Component {
   render() {
     return (
       <Container className="shows col-sm-4 col-md-10">
-        <Row>
+        <Row xs={1} md={2} className="g-4">
           {this.props.myShows.length > 0 ? (
             this.props.myShows.map((show, index) => {
               return (
                 <Col key={index} className="col-sm-4 col-md-5">
-                  <ShowCard
-                    tvShow={show}
-                    deleteShow={this.props.deleteShow}
-                  />
+                  <ShowCard tvShow={show} deleteShow={this.props.deleteShow} />
                 </Col>
               );
             })

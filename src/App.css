@@ -64,7 +64,7 @@ div.home {
 .searchresult {
   display: flex;
   background-color: black;
-  height: 50rem;
+  height: 100rem;
 }
 
 .searchresultcard {
@@ -75,15 +75,14 @@ div.home {
 
 .showcard {
   width: 18rem;
-  height: 400px;
+  height: 700px;
   margin: 10px;
 }
 
 .shows {
-  height: 50rem;
-  overflow-x: auto;
+  height: 100rem;
+  background-color: black;
   display: flex;
-  justify-content: center;
 }
 
 .noShowsParent {
