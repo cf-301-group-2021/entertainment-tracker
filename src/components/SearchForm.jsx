@@ -16,26 +16,23 @@ class SearchForm extends React.Component {
   render() {
     return (
       <div className="searchform">
-        <h2>Search for your next show</h2>
+        <h2 style={{ textAlign: "center" }}>Search for your next show</h2>
         <Form style={{ width: "450px" }} onSubmit={this.handleSubmit}>
           <Form.Group className="mb-3" controlId="formTitle">
-            <Form.Label>Title</Form.Label>
-            <Form.Control type="text" placeholder="TV Show title" />
+            <Form.Label>Show Title</Form.Label>
+            <Form.Control type="text" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formGenre">
-            <Form.Label>Genre</Form.Label>
-            <Form.Control type="text" placeholder="Enter a TV Show's genre" />
+            <Form.Label>Show Genre</Form.Label>
+            <Form.Control type="text" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formPerson">
             <Form.Label>Actor/Actress</Form.Label>
-            <Form.Control type="text" placeholder="Enter an actor or actress" />
+            <Form.Control type="text" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formStreamingService">
             <Form.Label>Streaming Service</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter the streaming service of the show"
-            />
+            <Form.Control type="text" />
           </Form.Group>
           <Button variant="primary" type="submit">
             Submit
