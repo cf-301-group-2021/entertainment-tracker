@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 
 class Shows extends React.Component {
   componentDidMount() {
-    this.props.myShows.length > 0 &&
-      this.props.loggedIn &&
-      this.props.getUserShows();
+    this.props.loggedIn && this.props.getUserShows();
   }
 
   render() {
