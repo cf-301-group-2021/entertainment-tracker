@@ -3,7 +3,6 @@ import React from "react";
 import SearchForm from "./SearchForm.jsx";
 import SearchResult from "./SearchResult.jsx";
 
-
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -22,18 +21,13 @@ class Search extends React.Component {
         return;
       }
 
-      console.log("hitting API");
-
       const API = `${process.env.REACT_APP_SERVER_URL}/search/shows/${title}`;
       const results = await axios.get(API);
       results.data.splice(0, -5);
-      console.log(results.data);
       this.setState({
         searchTitle: title,
         searchResult: results.data,
       });
-
-      console.log("hit API");
     } catch (error) {
       //TODO: better error handling; render an error
       this.props.errorHandler(error);
