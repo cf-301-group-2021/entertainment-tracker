@@ -64,7 +64,10 @@ div.home {
 .searchresult {
   display: flex;
   background-color: black;
+  overflow-y: scroll;
   height: 100rem;
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
 
 .searchresultcard {
@@ -82,7 +85,9 @@ div.home {
 .shows {
   height: 100rem;
   background-color: black;
+  overflow-y: scroll;
   display: flex;
+  margin-bottom: 40px;
 }
 
 .noShowsParent {

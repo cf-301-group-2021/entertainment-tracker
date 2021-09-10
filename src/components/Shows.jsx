@@ -12,12 +12,12 @@ class Shows extends React.Component {
 
   render() {
     return (
-      <Container className="shows col-sm-4 col-md-10">
-        <Row xs={1} md={2} className="g-4">
+      <Container className="shows">
+        <Row xs={3} md={3} className="g-4">
           {this.props.myShows.length > 0 ? (
             this.props.myShows.map((show, index) => {
               return (
-                <Col key={index} className="col-sm-4 col-md-5">
+                <Col key={index}>
                   <ShowCard tvShow={show} deleteShow={this.props.deleteShow} />
                 </Col>
               );
