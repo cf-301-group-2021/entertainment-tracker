@@ -1,7 +1,8 @@
+import axios from "axios";
 import React from "react";
 import SearchForm from "./SearchForm.jsx";
 import SearchResult from "./SearchResult.jsx";
-import axios from "axios";
+
 
 class Search extends React.Component {
   constructor(props) {
@@ -48,6 +49,7 @@ class Search extends React.Component {
           <SearchResult
             searchResult={this.state.searchResult}
             addShow={this.props.addShow}
+            loggedInuser={this.props.loggedInUser}
           />
         )}
       </div>
