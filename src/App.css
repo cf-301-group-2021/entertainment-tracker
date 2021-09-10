@@ -3,9 +3,6 @@
   font-family: "Sarala", sans-serif;
 }
 
-.aboutus {
-}
-
 .aboutuscard {
   width: 18rem;
 }
@@ -21,9 +18,14 @@ div.header {
   background-color: #badda6;
 }
 
+.nav-link {
+  font-size: 30px;
+}
+
 nav.headernavbar {
   display: flex;
   justify-content: flex-end;
+  min-height: 100px;
 }
 
 nav.footernavbar {
@@ -33,7 +35,6 @@ nav.footernavbar {
 
 div.home {
   text-align: center;
-  background-color: #e9e8dd;
   min-height: 1000px;
 }
 
@@ -49,18 +50,16 @@ div.home {
   color: #5f5f5f;
 }
 
-.login {
-}
-
 .search {
 }
 
 .searchform {
+  background-color: #e0e0e0;
   border: thick #484538 solid;
   border-radius: 10px;
   width: 33rem;
   padding: 14px;
-  margin: 20px;
+  margin: 50px;
 }
 
 .searchresult {
@@ -92,10 +91,11 @@ div.home {
 }
 
 .noShowsParent {
-  color: #a7e8f1;
+  background-color: #484538;
+  color: #e0e0e0;
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin-top: 100px;
   width: 50rem;
   height: 400px;
 }

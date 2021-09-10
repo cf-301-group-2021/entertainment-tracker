@@ -31,6 +31,6 @@
 
 - Miro
 - Google Fonts:
-  - [Aclonica and Sarala](https://fonts.google.com/share?selection.family=Aclonica%7CSarala)
+  - [Sarala](https://fonts.google.com/share?selection.family=%7CSarala)
 - Coolors - Color Scheme:
   ![color-scheme](./docs/color-theme.png)

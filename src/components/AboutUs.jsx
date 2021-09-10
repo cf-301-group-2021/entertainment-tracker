@@ -8,7 +8,10 @@ class AboutUs extends React.Component {
     return (
       <div className="aboutus">
         <div id="aboutushead">
-          <h2 style={{padding: "40px", fontSize: "48px",}}>Our Team</h2>
+          <h2 style={{ padding: "30px", fontSize: "48px", fontWeight: "bold" }}>
+            Our Team
+          </h2>
+          <hr></hr>
         </div>
         <div id="authorcards">
           {data.authors.map((author, index) => {
