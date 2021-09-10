@@ -1,17 +1,18 @@
-import React from "react";
 import axios from "axios";
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Header from "./components/Header";
-import { Switch, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Search from "./components/Search";
-import Login from "./components/Login";
-import Logout from "./components/Logout";
-import Shows from "./components/Shows";
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import "./App.css";
 import AboutUs from "./components/AboutUs";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import Logout from "./components/Logout";
+import Search from "./components/Search";
+import Shows from "./components/Shows";
 import ToastMessage from "./components/ToastMessage";
+
 
 class App extends React.Component {
   constructor(props) {
@@ -50,7 +51,7 @@ class App extends React.Component {
   addShow = async (tvShow) => {
     // prevent duplicate additions
     const found = this.state.myShows.find(
-      (savedShow) => savedShow.showTitle === tvShow.showTitle
+      (savedShow) => savedShow.showTitle === tvShow.showTitle,
     );
 
     if (found) {
@@ -121,7 +122,7 @@ class App extends React.Component {
               <Home />
             </Route>
             <Route path="/search">
-              <Search errorHandler={this.errorHandler} addShow={this.addShow} />
+              <Search errorHandler={this.errorHandler} addShow={this.addShow} loggedInUser={this.state.loggedInUser} />
             </Route>
             <Route path="/login">
               <Home />
