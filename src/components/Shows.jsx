@@ -13,7 +13,7 @@ class Shows extends React.Component {
   render() {
     return (
       <Container className="shows">
-        <Row xs={3} md={3} className="g-4">
+        <Row>
           {this.props.myShows.length > 0 ? (
             this.props.myShows.map((show, index) => {
               return (

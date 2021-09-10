@@ -8,7 +8,7 @@ class SearchResultCard extends React.Component {
     return (
       <Card className="searchresultcard">
         <Card.Img variant="top" src={this.props.tvShow.showImageSmall} />
-        <Card.Body style={{ overflowY: "scroll" }}>
+        <Card.Body className="hidescroll" style={{ overflowY: "scroll" }}>
           <Card.Title>{this.props.tvShow.showTitle}</Card.Title>
           {this.props.tvShow.showDescription ? (
             <div>{parse(this.props.tvShow.showDescription)}</div>
