@@ -50,7 +50,9 @@ class App extends React.Component {
   addShow = async (tvShow) => {
     // prevent duplicate additions
     if (
-      this.state.myShows.find((savedShow) => savedShow.name === tvShow.name)
+      this.state.myShows.find(
+        (savedShow) => savedShow.showTitle === tvShow.showTitle
+      )
     ) {
       return;
     }
@@ -61,7 +63,7 @@ class App extends React.Component {
 
       this.setState({ myShows: newArray });
       console.log(newArray);
-      await axios.put(API, newArray);
+      await axios.put(API, tvShow);
     } catch (error) {
       this.errorHandler(error);
     }
@@ -71,7 +73,7 @@ class App extends React.Component {
     try {
       this.setState({
         myShows: this.state.myShows.filter((show) => {
-          return show.name !== tvShow.name;
+          return show.showTitle !== tvShow.showTitle;
         }),
       });
     } catch (error) {

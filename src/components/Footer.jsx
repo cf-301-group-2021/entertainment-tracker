@@ -9,9 +9,11 @@ class Footer extends React.Component {
       <div className="footer">
         <Navbar className="footernavbar">
           <Nav.Item>
-            <Navbar.Text>{"\u00A9 2021 tvRepo, LLC"}</Navbar.Text>
+            <Navbar.Text style={{ marginRight: "30px" }}>
+              {"\u00A9 2021 tvRepo, LLC"}
+            </Navbar.Text>
           </Nav.Item>
-          <Nav.Item>
+          <Nav.Item style={{ marginRight: "20px" }}>
             <Link to="/about">Contact Us</Link>
           </Nav.Item>
         </Navbar>
