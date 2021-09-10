@@ -49,7 +49,7 @@ class Search extends React.Component {
           <SearchResult
             searchResult={this.state.searchResult}
             addShow={this.props.addShow}
-            loggedInuser={this.props.loggedInUser}
+            loggedInUser={this.props.loggedInUser}
           />
         )}
       </div>
