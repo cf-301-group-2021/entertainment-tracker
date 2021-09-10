@@ -122,7 +122,7 @@ class App extends React.Component {
               <Home />
             </Route>
             <Route path="/search">
-              <Search errorHandler={this.errorHandler} addShow={this.addShow} loggedInUser={this.state.loggedInUser} />
+              <Search errorHandler={this.errorHandler} addShow={this.addShow} loggedIn={this.state.loggedIn} />
             </Route>
             <Route path="/login">
               <Home />

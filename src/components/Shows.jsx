@@ -8,19 +8,17 @@ import ShowCard from "./ShowCard.jsx";
 
 class Shows extends React.Component {
   componentDidMount() {
-    this.props.myShows.length > 0 &&
-    this.props.loggedIn &&
-    this.props.getUserShows();
+    this.props.loggedIn && this.props.getUserShows();
   }
 
   render() {
     return (
-      <Container className="shows">
+      <Container className="shows col-sm-4 col-md-10">
         <Row>
           {this.props.myShows.length > 0 ? (
             this.props.myShows.map((show, index) => {
               return (
-                <Col key={index} className="col-sm-4 col-md-3">
+                <Col key={index} className="col-sm-4 col-md-5">
                   <ShowCard
                     tvShow={show}
                     deleteShow={this.props.deleteShow}

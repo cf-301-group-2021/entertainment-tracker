@@ -18,7 +18,7 @@ class SearchResultCard extends React.Component {
               "No description available"
             )}
           </Card.Body>
-          {this.props.loggedInUser ? (
+          {this.props.loggedIn ? (
             <Button
               variant="primary"
               onClick={() => this.props.addShow(this.props.tvShow)}
