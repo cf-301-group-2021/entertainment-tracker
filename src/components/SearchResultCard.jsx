@@ -6,11 +6,11 @@ class SearchResultCard extends React.Component {
   render() {
     return (
       <Card className="searchresultcard">
-        <Card.Img variant="top" src={this.props.tvShow.image?.original} />
+        <Card.Img variant="top" src={this.props.tvShow.showImageSmall} />
         <Card.Body style={{ overflowY: "scroll" }}>
-          <Card.Title>{this.props.tvShow.name}</Card.Title>
-          {this.props.tvShow.summary ? (
-            <div>{parse(this.props.tvShow.summary)}</div>
+          <Card.Title>{this.props.tvShow.showTitle}</Card.Title>
+          {this.props.tvShow.showDescription ? (
+            <div>{parse(this.props.tvShow.showDescription)}</div>
           ) : (
             "No description available"
           )}

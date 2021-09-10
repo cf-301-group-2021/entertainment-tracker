@@ -15,21 +15,23 @@ class ShowCard extends React.Component {
         <Card style={{ width: "18rem" }}>
           <Card.Img
             variant="top"
-            src={tvShow.image?.original}
+            src={tvShow.showImageLarge}
             onClick={() => this.handleImageClick()}
           />
 
           <Card.Body>
-            <Card.Title>{tvShow.name}</Card.Title>
-            {parse(tvShow.summary)}
+            <Card.Title>{tvShow.showTitle}</Card.Title>
+            {parse(tvShow.showDescription)}
             <br />
-            Airing status: {tvShow.status}
-            {tvShow.timeZone}
-            {tvShow.schedule.time}
+            Airing status: {tvShow.showStatus}
             <br />
-            Airs on: {tvShow.schedule.days}
+            {tvShow.showTimezone}
             <br />
-            Network: {tvShow.network?.name || tvShow.webChannel.name}
+            {tvShow.showNextEpisode24HourTime}
+            <br />
+            Airs on: {tvShow.showNextEpisodeDayOfWeek}
+            <br />
+            Network: {tvShow.showNetwork}
             <br />
             <Button
               variant="danger"
