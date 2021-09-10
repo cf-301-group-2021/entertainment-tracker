@@ -11,37 +11,32 @@ class ShowCard extends React.Component {
   render() {
     const tvShow = this.props.tvShow;
     return (
-      <div className="showcard">
-        <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src={tvShow.showImageLarge}
-            onClick={() => this.handleImageClick()}
-          />
+      <Card className="showcard">
+        <Card.Img
+          variant="top"
+          src={tvShow.showImageLarge}
+          onClick={() => this.handleImageClick()}
+        />
 
-          <Card.Body>
-            <Card.Title>{tvShow.showTitle}</Card.Title>
-            {parse(tvShow.showDescription)}
-            <br />
-            Airing status: {tvShow.showStatus}
-            <br />
-            {tvShow.showTimezone}
-            <br />
-            {tvShow.showNextEpisode24HourTime}
-            <br />
-            Airs on: {tvShow.showNextEpisodeDayOfWeek}
-            <br />
-            Network: {tvShow.showNetwork}
-            <br />
-            <Button
-              variant="danger"
-              onClick={() => this.props.deleteShow(tvShow)}
-            >
-              Delete
-            </Button>
-          </Card.Body>
-        </Card>
-      </div>
+        <Card.Body style={{ overflowY: "scroll" }}>
+          <Card.Title>{tvShow.showTitle}</Card.Title>
+          {parse(tvShow.showDescription)}
+          <br />
+          Airing status: {tvShow.showStatus}
+          <br />
+          {tvShow.showTimezone}
+          <br />
+          {tvShow.showNextEpisode24HourTime}
+          <br />
+          Airs on: {tvShow.showNextEpisodeDayOfWeek}
+          <br />
+          Network: {tvShow.showNetwork}
+          <br />
+        </Card.Body>
+        <Button variant="danger" onClick={() => this.props.deleteShow(tvShow)}>
+          Delete
+        </Button>
+      </Card>
     );
   }
 }
